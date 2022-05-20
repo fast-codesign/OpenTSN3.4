@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_plan_cfg>
+	<!-- 标签中的值全部用16进制表示-->
+	<!-- 交换机1-->
+	<node>
+		<hcp_mid>0</hcp_mid>
+		<entry>
+                <addr> 0000c063</addr>
+                <data>0 </data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0</data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0</data>
+		<data> 0</data>
+		<data> 0</data>
+		<data> 0</data>
+		<data> 0</data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0</data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0</data>
+		<data> 0</data>
+		<data> 0</data>
+		<data> 0</data>
+		<data> 0</data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0</data>
+		<data>0 </data>
+		<data>0 </data>
+		<data>0</data>
+		<data> 0</data>
+		</entry>
+	</node>	
+	
+</network_plan_cfg>

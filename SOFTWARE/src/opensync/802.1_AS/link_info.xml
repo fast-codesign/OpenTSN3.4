@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sync_info>
+
+	<device_info>
+		<device_type>BC</device_type>
+		<mid>7</mid>
+	</device_info>
+
+	<!-- 边界节点信息 -->
+	<BC>           
+		<mid>1</mid>				<!-- 边界节点的MID编号，十进制主机序 -->
+		<link_delay>840</link_delay>	<!-- 与上级节点的链路延迟，单位ns，必须是8的倍数，十进制主机序 -->
+		<next_class_info_table>		<!-- 下一级同步节点信息 -->
+			<mid>4</mid>				<!-- 下一级节点的MID编号，十进制主机序 -->
+			<mid>5</mid>
+		</next_class_info_table>
+	</BC>
+
+
+	<slave>           
+		<mid>4</mid>
+		<link_delay>840</link_delay>
+	</slave>
+
+	<slave>           
+		<mid>5</mid>
+		<link_delay>840</link_delay>
+	</slave>
+
+
+	
+</sync_info>
+

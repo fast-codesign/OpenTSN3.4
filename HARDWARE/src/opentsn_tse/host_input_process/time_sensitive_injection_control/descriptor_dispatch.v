@@ -1,0 +1,110 @@
+// Copyright (C) 1953-2020 NUDT
+// Verilog module name -descriptor_dispatch
+// Version: DES_V1.0
+// Created:
+//         by - fenglin 
+//         at - 10.2020
+////////////////////////////////////////////////////////////////////////////
+// Description:
+//         Descriptor Send
+///////////////////////////////////////////////////////////////////////////
+
+`timescale 1ns/1ps
+
+module descriptor_dispatch(
+        i_clk,
+        i_rst_n,
+        
+        i_descriptor_valid,
+        iv_descriptor, 
+        iv_eth_type,        
+        i_pkt_bufid_wr,
+        iv_dbufid,
+        iv_pkt_bufid,
+        o_pkt_bufid_ack,
+        
+        o_pkt_bufid_wr,
+        ov_pkt_bufid,
+        ov_dbufid,
+        o_descriptor_wr_to_tim,
+        o_descriptor_wr_to_doc,
+        ov_descriptor_to_tim,
+        ov_descriptor_to_doc,		
+    );
+
+// I/O
+// clk & rst
+input                   i_clk;
+input                   i_rst_n;
+//input
+input                   i_descriptor_valid;
+input       [39:0]      iv_descriptor;
+input       [15:0]      iv_eth_type;
+input                   i_pkt_bufid_wr;
+input       [4:0]       iv_dbufid;
+input       [8:0]       iv_pkt_bufid;
+output  reg             o_pkt_bufid_ack;
+//output
+output  reg             o_pkt_bufid_wr;
+output  reg [8:0]       ov_pkt_bufid;
+output  reg [4:0]       ov_dbufid;
+output  reg             o_descriptor_wr_to_tim;
+output  reg             o_descriptor_wr_to_doc;
+output  reg [39:0]      ov_descriptor_to_tim;
+output  reg [39:0]      ov_descriptor_to_doc;
+
+//temp ov_descriptor and ov_pkt for discarding pkt while the fifo_used_findows is over the threshold 
+//internal wire&reg
+
+        
+always@(posedge i_clk or negedge i_rst_n)
+    if(!i_rst_n) begin
+        o_pkt_bufid_ack     <= 1'b0;
+        o_pkt_bufid_wr      <= 1'b0;
+        ov_pkt_bufid        <= 9'b0;  
+        ov_dbufid           <= 5'b0;  
+        o_descriptor_wr_to_tim <= 1'b0;
+        o_descriptor_wr_to_doc <= 1'b0;
+        ov_descriptor_to_tim   <= 40'b0;
+        ov_descriptor_to_doc   <= 40'b0;	
+    end
+    else begin
+        if(i_pkt_bufid_wr == 1'b1 && i_descriptor_valid == 1'b1)begin//when descriptor come,pkt_bufid_wr have been already
+            o_pkt_bufid_wr      <= i_pkt_bufid_wr;
+            ov_pkt_bufid        <= iv_pkt_bufid;
+            if((iv_eth_type == 16'h1800)&&(iv_descriptor[30:28]==3'd0||iv_descriptor[30:28]==3'd1||iv_descriptor[30:28]==3'd2))begin
+                o_descriptor_wr_to_tim <= 1'b1;
+				o_pkt_bufid_ack     <= 1'b1;
+                ov_descriptor_to_tim[39:31] <= iv_pkt_bufid;
+                ov_descriptor_to_tim[30:0]  <= iv_descriptor[30:0]; 
+                ov_dbufid <= iv_dbufid; 
+            end
+            else begin
+                o_descriptor_wr_to_doc <= 1'b1;
+				o_pkt_bufid_ack     <= 1'b1;
+                ov_descriptor_to_doc[39:31] <= iv_pkt_bufid;
+                ov_descriptor_to_doc[30:0]  <= iv_descriptor[30:0];  
+            end
+        end              
+        else if(i_pkt_bufid_wr == 1'b0 && i_descriptor_valid == 1'b1)begin
+            o_pkt_bufid_ack     <= 1'b0;
+            o_pkt_bufid_wr      <= 1'b0;
+            ov_pkt_bufid        <= 9'b0;
+            ov_dbufid           <= 5'b0;  
+            o_descriptor_wr_to_tim <= 1'b0;
+            o_descriptor_wr_to_doc <= 1'b0;
+            ov_descriptor_to_tim   <= 40'b0;
+            ov_descriptor_to_doc   <= 40'b0;
+        end
+        else begin
+            o_pkt_bufid_ack     <= 1'b0;
+            o_pkt_bufid_wr      <= 1'b0;
+            ov_pkt_bufid        <= 9'b0;
+            ov_dbufid           <= 5'b0;  
+            o_descriptor_wr_to_tim <= 1'b0;
+            o_descriptor_wr_to_doc <= 1'b0;
+            ov_descriptor_to_tim   <= 40'b0;
+            ov_descriptor_to_doc   <= 40'b0;                                    
+       end
+   end
+endmodule

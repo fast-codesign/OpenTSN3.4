@@ -1,0 +1,5 @@
+call \$fsdbAutoSwitchDumpfile 5000 \ "./wave.fsdb\" 30
+call {$fsdbDumpvars(0,top_module,"+all")}
+call {$fsdbDumpflush}
+run
+quit

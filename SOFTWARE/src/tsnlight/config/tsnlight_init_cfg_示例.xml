@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_init_cfg>
+	<!-- 标签中的值全部用16进制主机序表示-->
+	<!-- 控制器的lid地址默认为0-->
+	<tsnlight_info>
+		<master_lid>1</master_lid>   	  <!-- 表示主时钟的本地ID地址，16进制主机序-->
+		<sync_period>c8</sync_period>    <!-- 时间同步的周期，单位ms，十六进制c8表示200ms，主机序--> 				
+	</tsnlight_info>	
+	
+	<!-- 交换机1-->
+	<switch> 
+		<lid>1</lid>   <!-- 交换机的本地ID地址，使用8bit表示-，16进制主机序-->
+		<lid_forward_table>  <!-- 交换机的LID转发表-->         
+			<entry> 
+				<lid>0</lid> 		  <!-- 目的交换机的LID地址，8bit表示，16进制主机序-->
+				<outport>1</outport>  <!-- 输出端口号，32bit表示，16进制主机序，bitmap表示方式，如3表示从0和1两个端口输出-->
+			</entry> 
+            <entry> 
+				<lid>1</lid> 
+				<outport>100</outport>  
+			</entry> 			
+			<entry> 
+				<lid>2</lid> 
+				<outport>4</outport>  
+			</entry>
+            <entry> 
+				<lid>ff</lid> 
+				<outport>4</outport>  
+			</entry> 			
+		</lid_forward_table>
+	</switch>
+
+	<!-- 交换机2-->
+	<switch> 
+		<lid>02</lid>  
+		<lid_forward_table>    
+			<entry> 
+				<lid>0</lid> 		 
+				<outport>1</outport> 
+			</entry> 
+			<entry> 
+				<lid>1</lid> 		 
+				<outport>1</outport> 
+			</entry> 			
+            <entry> 
+				<lid>2</lid> 		 
+				<outport>100</outport> 
+			</entry> 
+			<entry> 
+				<lid>ff</lid> 
+				<outport>100</outport>  
+			</entry>
+		</lid_forward_table>
+	</switch>
+
+</network_init_cfg>
+
+

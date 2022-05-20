@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_init_cfg>
+	<!-- 标签中的值全部用16进制主机序表示-->
+	
+	<!-- 节点0-->
+	<node> 
+		<hcp_mid>0</hcp_mid>   <!-- 交换机的本地dmid地址，16进制主机序-->
+		<tsmp_forward_table>  <!-- 交换机的dmid转发表-->         
+            <entry> <!-- 控制器转发表-->
+				<dmid>800</dmid> 
+				<outport>1</outport>  
+			</entry>
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>801</dmid> 
+				<outport>4</outport>  
+			</entry> 	
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>1</dmid> 
+				<outport>2</outport>  
+			</entry> 	
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>2</dmid> 
+				<outport>2</outport>  
+			</entry> 			
+		</tsmp_forward_table>
+	</node>
+
+	<!-- 节点1-->
+	<node> 
+		<hcp_mid>1</hcp_mid>   <!-- 交换机的本地dmid地址，16进制主机序-->
+		<tsmp_forward_table>  <!-- 交换机的dmid转发表-->         
+            <entry> <!-- 控制器转发表-->
+				<dmid>800</dmid> 
+				<outport>1</outport>  
+			</entry>
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>801</dmid> 
+				<outport>1</outport>  
+			</entry> 	
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>0</dmid> 
+				<outport>1</outport>  
+			</entry> 				
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>2</dmid> 
+				<outport>2</outport>  
+			</entry> 
+		</tsmp_forward_table>
+	</node>
+
+	<!-- 节点2-->
+	<node> 
+		<hcp_mid>2</hcp_mid>   <!-- 交换机的本地dmid地址，16进制主机序-->
+		<tsmp_forward_table>  <!-- 交换机的dmid转发表-->         
+            <entry> <!-- 控制器转发表-->
+				<dmid>800</dmid> 
+				<outport>1</outport>  
+			</entry>
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>801</dmid> 
+				<outport>1</outport>  
+			</entry> 	
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>0</dmid> 
+				<outport>1</outport>  
+			</entry> 	
+			<entry> <!-- 同步应用主机转发表-->
+				<dmid>1</dmid> 
+				<outport>1</outport>  
+			</entry> 	
+		</tsmp_forward_table>
+	</node>
+
+</network_init_cfg>
+
+

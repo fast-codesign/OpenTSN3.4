@@ -1,0 +1,12 @@
+﻿1、运行方式 
+	
+	./tsnlight [net_interface]
+
+2、配置
+	配置文本为存放在config文件夹下，包含tsnlight_init_cfg.xml、tsnlight_plan_cfg.xml和arp_table.xml
+	
+	tsnlight_init_cfg.xml：初始配置xml文本，主要配置初始转发表
+	
+	tsnlight_plan_cfg.xml：规划配置xml文本，配置离线规划内容
+	
+	arp_table.xml：        arp表项，为了兼容以前的版本，在OpenTSN3.2及以后版本可以不用配置

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<param_cfg>
+    <global_param>
+        <integration_cycle_duration>100000000</integration_cycle_duration>
+        <max_transmission_delay>20000000</max_transmission_delay>
+        <max_integration_cycle>200</max_integration_cycle>
+        <accuracy>400</accuracy>
+    </global_param>
+
+    <cm_param>
+        <cm_listen_timeout>100000000</cm_listen_timeout>
+        <cm_ca_enable_timeout>100000000</cm_ca_enable_timeout>
+        <cm_wait_4_in_timeout>100000000</cm_wait_4_in_timeout>
+        <cm_restart_timeout>100000000</cm_restart_timeout>
+        <cm_dispatch_delay>40000</cm_dispatch_delay>
+        <cm_caculation_overhead>20000</cm_caculation_overhead>
+        <cm_integrate_to_sync_thrld>8</cm_integrate_to_sync_thrld>
+        <cm_unsync_to_sync_thrld>1</cm_unsync_to_sync_thrld>
+        <cm_sync_threshold_sync>1</cm_sync_threshold_sync>
+        <cm_sync_threshold_async>2</cm_sync_threshold_async>
+        <cm_sync_listen_timeout>100000000</cm_sync_listen_timeout>
+        <cm_ca_listen_timeout>80000000</cm_ca_listen_timeout>
+        <cm_wait4in_listen_timeout>80000000</cm_wait4in_listen_timeout>
+    </cm_param>
+
+    <sm_param>
+        <sm_listen_timeout>200000000</sm_listen_timeout>
+        <sm_coldstart_timeout>500000000</sm_coldstart_timeout>
+        <sm_restart_timeout>200000000</sm_restart_timeout>
+        <cs_offset>40000000</cs_offset>
+        <ca_offset>40000000</ca_offset>
+        <ca_receive_timeout>200000000</ca_receive_timeout>
+        <ca_acceptance_window>200</ca_acceptance_window>
+        <sm_integrate_to_sync_thrld>1</sm_integrate_to_sync_thrld>
+        <sm_unsync_to_sync_thrld>1</sm_unsync_to_sync_thrld>
+        <sm_unsync_to_tentative_thrld>2</sm_unsync_to_tentative_thrld>
+        <sm_tentative_sync_threshold_sync>1</sm_tentative_sync_threshold_sync>
+        <sm_tentative_to_sync_thrld>1</sm_tentative_to_sync_thrld>
+        <sm_sync_threshold_sync>1</sm_sync_threshold_sync>
+        <num_stable_cycles>8</num_stable_cycles>
+        <num_unstable_cycles>2</num_unstable_cycles>
+        <sm_stable_threshold_sync>1</sm_stable_threshold_sync>
+    </sm_param>
+</param_cfg>

@@ -1,0 +1,3 @@
+****** debug message ******
+*************enter LOCAL_PLAN_CFG_S********************
+*************enter SYNC_INIT_S********************

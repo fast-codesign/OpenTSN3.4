@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<init_cfg>
+    <device_num>6</device_num>
+    <net_interface>enp44s0</net_interface>
+    <sync_ctrl> <!-- 控制程序运行的设备地址 -->
+        <mid>6</mid>
+        <multi_mac>9</multi_mac>
+    </sync_ctrl>
+
+    <device>
+        <id>0</id>
+        <clock_role>17</clock_role>        <!-- CM = 0x11 ; SM = 0x12 -->
+        <mid>0</mid>
+        <static_delay>0</static_delay>
+    </device>
+
+    <device>
+        <id>1</id>
+        <clock_role>18</clock_role>        <!-- CM = 0x11 ; SM = 0x12 -->
+        <mid>1</mid>
+        <static_delay>800</static_delay>
+    </device>
+
+    <device>
+        <id>2</id>
+        <clock_role>18</clock_role>        <!-- CM = 0x11 ; SM = 0x12 -->
+        <mid>2</mid>
+        <static_delay>800</static_delay>
+    </device>
+
+    <device>
+        <id>3</id>
+        <clock_role>18</clock_role>        <!-- CM = 0x11 ; SM = 0x12 -->
+        <mid>3</mid>
+        <static_delay>800</static_delay>
+    </device>
+
+    <device>
+        <id>4</id>
+        <clock_role>18</clock_role>        <!-- CM = 0x11 ; SM = 0x12 -->
+        <mid>4</mid>
+        <static_delay>1500</static_delay>
+    </device>
+
+    <device>
+        <id>5</id>
+        <clock_role>18</clock_role>        <!-- CM = 0x11 ; SM = 0x12 -->
+        <mid>5</mid>
+        <static_delay>1500</static_delay>
+    </device>
+
+</init_cfg>

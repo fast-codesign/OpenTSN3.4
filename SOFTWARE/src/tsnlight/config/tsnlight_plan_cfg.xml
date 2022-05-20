@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network_plan_cfg>
+	<!-- 标签中的值全部用16进制表示-->
+	<!-- 交换机1-->
+	<node>
+		<hcp_mid>0</hcp_mid>
+		<entry>
+			<addr>1000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>1b000000</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>1001000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>b08ef0</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>2001000</addr> 
+			<data>40420f00</data>  
+		</entry>	
+	</node>	
+	<node>
+		<hcp_mid>1</hcp_mid>
+		<entry>
+			<addr>1000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>1b000000</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>1001000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>b08ef0</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>2001000</addr> 
+			<data>40420f00</data>  
+		</entry>
+	</node>
+	<node>
+		<hcp_mid>2</hcp_mid>
+		<entry>
+			<addr>1000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>1b000000</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>1001000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>b08ef0</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>2001000</addr> 
+			<data>40420f00</data>  
+		</entry>
+	</node>
+	<node>
+		<hcp_mid>3</hcp_mid>
+		<entry>
+			<addr>1000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>1b000000</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>1001000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>b08ef0</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>2001000</addr> 
+			<data>40420f00</data>  
+		</entry>
+	</node>
+	<node>
+		<hcp_mid>4</hcp_mid>
+		<entry>
+			<addr>1000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>1b000000</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>1001000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>b08ef0</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>2001000</addr> 
+			<data>40420f00</data>  
+		</entry>
+	</node>
+	<node>
+		<hcp_mid>5</hcp_mid>
+		<entry>
+			<addr>1000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>1b000000</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>1001000</addr>    <!--配置的地址，使用32bit表示，十六进制、网络序Basetime-->
+			 <!--配置的数据,每一个data标签标示一个32bit数据，每一个addr标签下，最大支持369个data标签，十六进制、网络序-->
+			<data>b08ef0</data> <!--网络序1-->		
+		</entry>
+		<entry>
+			<addr>2001000</addr> 
+			<data>40420f00</data>  
+		</entry>
+	</node>
+</network_plan_cfg>

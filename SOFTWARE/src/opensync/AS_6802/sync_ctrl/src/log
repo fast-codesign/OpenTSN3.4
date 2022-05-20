@@ -1,0 +1,862 @@
+➜  sync_ctrl git:(master) ✗ make clean && make && sudo ./sync_ctrl
+rm -rf sync_ctrl ./src/*.o ./src/*.a
+gcc -g -o ./src/basic_func.o -c ./src/basic_func.c 
+gcc -g -o ./src/cm_pkt_proc.o -c ./src/cm_pkt_proc.c -L ../lib -lopensync -lpcap -lnet -lsim -lxml2 -I ./include -I ../include
+gcc -g -o ./src/cm_timeout_handle.o -c ./src/cm_timeout_handle.c -L ../lib -lopensync -lpcap -lnet -lsim -lxml2 -I ./include -I ../include
+gcc -g -o ./src/pcf_pkt_generate.o -c ./src/pcf_pkt_generate.c 
+gcc -g -o ./src/sm_pkt_proc.o -c ./src/sm_pkt_proc.c	-L ../lib -lopensync -lpcap -lnet -lsim -lxml2 -I ./include -I ../include
+gcc -g -o ./src/sm_timeout_handle.o -c ./src/sm_timeout_handle.c -L ../lib -lopensync -lpcap -lnet -lsim -lxml2 -I ./include -I ../include
+gcc -g -o ./src/timerlist.o -c ./src/timerlist.c
+gcc -g -o ./src/pkt_process.o -c ./src/pkt_process.c
+ar -rc ./src/libttesync.a ./src/basic_func.o ./src/cm_pkt_proc.o ./src/cm_timeout_handle.o ./src/pcf_pkt_generate.o \
+./src/sm_pkt_proc.o ./src/sm_timeout_handle.o ./src/timerlist.o ./src/pkt_process.o
+gcc -g -o sync_ctrl main.c ./src/libttesync.a -L ./src -lttesync -L ../lib -lopensync -lpcap -lnet -lsim -lxml2 -I ./include -I ../include
+integration_cycle_duration = 100000000
+max_transmission_delay = 20000000
+max_integration_cycle = 200
+accuracy = 400
+cm_listen_timeout = 100000000
+cm_ca_enable_timeout = 100000000
+cm_wait_4_in_timeout = 100000000
+cm_restart_timeout = 100000000
+cm_dispatch_delay = 40000
+cm_caculation_overhead = 20000
+cm_integrate_to_sync_thrld = 8
+cm_unsync_to_sync_thrld = 1
+cm_sync_threshold_sync = 1
+cm_sync_threshold_async = 2
+cm_sync_listen_timeout = 100000000
+cm_ca_listen_timeout = 80000000
+cm_wait4in_listen_timeout = 80000000
+sm_listen_timeout = 200000000
+sm_coldstart_timeout = 500000000
+sm_restart_timeout = 200000000
+cs_offset = 40000000
+ca_offset = 40000000
+ca_receive_timeout = 200000000
+ca_acceptance_window = 200
+sm_integrate_to_sync_thrld = 1
+sm_unsync_to_sync_thrld = 1
+sm_unsync_to_tentative_thrld = 2
+sm_tentative_sync_threshold_sync = 1
+sm_tentative_to_sync_thrld = 1
+sm_sync_threshold_sync = 1
+num_stable_cycles = 8
+num_unstable_cycles = 2
+sm_stable_threshold_sync = 1
+6   enp44s0
+LIBPCAP INIT SUCCESS.
+LIBNET INIT SUCCESS.
+ctrl mid 6
+multi mid 9
+66:26:62:00:60:02
+66:26:62:00:90:00
+index 0 
+clock role 17 
+66:26:62:00:00:00
+index 1 
+clock role 18 
+66:26:62:00:10:00
+index 2 
+clock role 18 
+66:26:62:00:20:00
+index 3 
+clock role 18 
+66:26:62:00:30:00
+index 4 
+clock role 18 
+66:26:62:00:40:00
+index 5 
+clock role 18 
+66:26:62:00:50:00
+CM[0] DEBUG INFO : CM INTEGRATE TO HANDLE
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM INTEGRATE PKT PROC
+===!!!!===
+SM[1] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[2] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[3] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[4] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[5] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM UNSYNC PKT PROC
+cm send cs
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM UNSYNC PKT PROC
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM UNSYNC PKT PROC
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM UNSYNC PKT PROC
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM UNSYNC PKT PROC
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM UNSYNC PKT PROC
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+SM[2] DEBUG INFO : SM FLOOD TO HANDLE
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[3] DEBUG INFO : SM FLOOD TO HANDLE
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[4] DEBUG INFO : SM FLOOD TO HANDLE
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[5] DEBUG INFO : SM FLOOD TO HANDLE
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[1] DEBUG INFO : SM FLOOD TO HANDLE
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 0
+======
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM ENABLE TO HANDLE
+cm enable timeout1
+cm send ca
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM FLOOD PKT PROC
+CA RECVD IN ACC_WIN!
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 3 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM FLOOD PKT PROC
+CA RECVD IN ACC_WIN!
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 3 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM FLOOD PKT PROC
+CA RECVD IN ACC_WIN!
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 3 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM FLOOD PKT PROC
+CA RECVD IN ACC_WIN!
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 3 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM FLOOD PKT PROC
+CA RECVD IN ACC_WIN!
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 3 
+===!!!!===
+CM[0] DEBUG INFO : CM ENABLE TO HANDLE
+cm enable timeout2
+SM[2] DEBUG INFO : SM WAIT4CS CS TO HANDLE
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 4  next state = 4 
+SM[3] DEBUG INFO : SM WAIT4CS CS TO HANDLE
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 8  next state = 4 
+SM[1] DEBUG INFO : SM WAIT4CS CS TO HANDLE
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 2  next state = 4 
+SM[5] DEBUG INFO : SM WAIT4CS CS TO HANDLE
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 32  next state = 4 
+SM[4] DEBUG INFO : SM WAIT4CS CS TO HANDLE
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 16  next state = 4 
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM WAIT4 IN PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM WAIT4 IN PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM WAIT4 IN PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM WAIT4 IN PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM WAIT4 IN PKT PROC
+===!!!!===
+CM[0] DEBUG INFO : CM WAIT4 IN TO HANDLE
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM TENTATIVE SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:8 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM TENTATIVE SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-8 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM TENTATIVE SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:72 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM TENTATIVE SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:40 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM TENTATIVE SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:56 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = 48
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-48 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-64 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-32 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = -304
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+ic error!3   4
+-----------------------***PACKET***-----------------------
+Packet Addr:0x5624246e06e0
+       0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F 
+0000: 66 26 62 00 60 02 66 26 62 00 00 00 FF 01 06 02 
+0010: 00 00 00 00 00 5B 56 C8 00 00 00 2A 71 29 0C F0 
+0020: 66 26 62 00 00 00 66 26 62 00 50 00 89 1D 00 00 
+0030: 00 03 00 00 00 20 00 00 00 00 00 00 02 00 00 00 
+0040: 00 00 00 00 00 5B 56 68 00 00 00 00 00 00 00 00 
+0050: 00 00 00 00 00 00 00 00 31 00 00 00 00 00 00 00 
+0060: 00 00 00 03 00 00 00 20 E0 6B 09 C6 00 00 00 00 
+0070: 06 00 00 00 00 00 00 00 
+-----------------------***PACKET***-----------------------
+
+===!!!!===
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-64 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-80 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-16 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:16 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = -288
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-64 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-96 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-16 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:-16 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = -304
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-48 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-80 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-16 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = -304
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-80 
+===!!!!===
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-64 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-32 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = 40
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-48 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-96 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-16 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:16 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = 48
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-64 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-80 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-32 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+CM[0] DEBUG INFO : offset = 64
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[2] DEBUG INFO : RAW_OFFSET:-64 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[3] DEBUG INFO : RAW_OFFSET:-80 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[1] DEBUG INFO : RAW_OFFSET:-16 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[5] DEBUG INFO : RAW_OFFSET:-32 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IN_PCF RECVED IN WINDOW!
+SM[4] DEBUG INFO : RAW_OFFSET:0 
+===!!!!===
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 0
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 1
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 2
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 3
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM SYNC PKT PROC
+index = 4
+===!!!!===
+CM[0] DEBUG INFO : CM SYNC TO HANDLE
+====++++++++++++++++++++++++++++++++++++++++++++++++++++++++=cm sync no pkt
+SM[2] DEBUG INFO : SM SYNC TO HANDLE
+SM[3] DEBUG INFO : SM SYNC TO HANDLE
+SM[5] DEBUG INFO : SM SYNC TO HANDLE
+SM[1] DEBUG INFO : SM SYNC TO HANDLE
+SM[4] DEBUG INFO : SM SYNC TO HANDLE
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM INTEGRATE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM INTEGRATE PKT PROC
+===!!!!===
+CM[0] DEBUG INFO : CM INTEGRATE TO HANDLE
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM SYNC PKT PROC
+SM[2] DEBUG INFO : IC OF IN DONT MATCH 0    11
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 0 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM SYNC PKT PROC
+SM[3] DEBUG INFO : IC OF IN DONT MATCH 0    11
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 0 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM SYNC PKT PROC
+SM[1] DEBUG INFO : IC OF IN DONT MATCH 0    11
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 0 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM SYNC PKT PROC
+SM[5] DEBUG INFO : IC OF IN DONT MATCH 0    11
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 0 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM SYNC PKT PROC
+SM[4] DEBUG INFO : IC OF IN DONT MATCH 0    11
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 0 
+===!!!!===
+SM[2] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[3] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[4] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[5] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+SM[1] DEBUG INFO : SM INTEGRATE TO HANDLE
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 1 
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM UNSYNC PKT PROC
+cm send cs
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+===!!!!===
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM UNSYNC PKT PROC
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM UNSYNC PKT PROC
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM UNSYNC PKT PROC
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM UNSYNC PKT PROC
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM UNSYNC PKT PROC
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+===!!!!===
+SM[2] DEBUG INFO : SM FLOOD TO HANDLE
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[3] DEBUG INFO : SM FLOOD TO HANDLE
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[4] DEBUG INFO : SM FLOOD TO HANDLE
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[5] DEBUG INFO : SM FLOOD TO HANDLE
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[1] DEBUG INFO : SM FLOOD TO HANDLE
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 0
+======
+*** stack smashing detected ***: terminated
+[1]    21386 abort      sudo ./sync_ctrl
+
+
+
+cm send cs
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+pcf processed by device[3]
+SM[3] DEBUG INFO : SM UNSYNC PKT PROC
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[2]
+SM[2] DEBUG INFO : SM UNSYNC PKT PROC
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[1]
+SM[1] DEBUG INFO : SM UNSYNC PKT PROC
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[5]
+SM[5] DEBUG INFO : SM UNSYNC PKT PROC
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[4]
+SM[4] DEBUG INFO : SM UNSYNC PKT PROC
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[3] DEBUG INFO : SM FLOOD TO HANDLE
+SM[3] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[2] DEBUG INFO : SM FLOOD TO HANDLE
+SM[2] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[1] DEBUG INFO : SM FLOOD TO HANDLE
+SM[1] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[5] DEBUG INFO : SM FLOOD TO HANDLE
+SM[5] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+SM[4] DEBUG INFO : SM FLOOD TO HANDLE
+SM[4] DEBUG INFO : state change ic_new = 0 membership new = 0  next state = 2 
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 0
+==========
+CM[0] DEBUG INFO : CM ENABLE TO HANDLE
+cm enable timeout1
+cm send ca
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 0
+==========
+pcf processed by device[0]
+CM[0] DEBUG INFO : CM ENABLE PKT PROC
+index = 1
+==========
