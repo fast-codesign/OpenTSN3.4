@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -L../libsim -lsim
+CFLAGS = -L../../lib/api -lsim
 
 ROOT_DIR  = $(shell pwd)
 

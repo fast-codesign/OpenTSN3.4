@@ -5,6 +5,7 @@ OpenTSN3.4开源项目基于新提出的同步架构，设计了同时支持1588
 
 
 ## 结构
+```  
 opentsn-OpenTSN3.4                                                                   
 	├──DEMO     //OpenTSN3.4真实物理组网环境示例                                     
 	│      ├── bin              //执行文件，包括硬件固化文件、软件可执行文件              
@@ -27,5 +28,7 @@ opentsn-OpenTSN3.4
 	       └── OpenEmulator     //OpenTSN3.4软硬件联合仿真工具OpenEmulator                
 		       ├── demo                //软硬件联合仿真组网示例（哑铃型）                     
 		       ├── doc                 //仿真器设计文档、环境安装、使用手册等文档 	         
-		       ├── lib                 //仿真器依赖的库文件说明   					         
+		       ├── lib                 //仿真器依赖的库文件说明  
+               ├── script              //仿真器运行脚本，脚本执行参看OpenEmulator使用手册   			   
 		       └── src                 //仿真器源码    				                         
+```

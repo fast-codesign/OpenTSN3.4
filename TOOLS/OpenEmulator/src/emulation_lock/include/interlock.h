@@ -6,12 +6,12 @@
 #ifndef _INTERLOCK_H
 #define _INTERLOCK_H
 
-#include "../../libsim/include/sim.h"
+#include "../../../lib/api/include/sim.h"
 
-#define RECV_TXT "../../Data/data018.txt"
-#define SEND_TXT "../../Data/data118.txt"
-#define SEND_STATE_TXT "../../Data/data218.txt"
-#define TIME_TXT "../../Data/time.txt"
+#define RECV_TXT "../../demo/data/data018.txt"
+#define SEND_TXT "../../demo/data/data118.txt"
+#define SEND_STATE_TXT "../../demo/data/data218.txt"
+#define TIME_TXT "../../demo/data/time.txt"
  // #define RECV_TXT "./data018.txt"
  // #define SEND_TXT "./data118.txt"
  // #define TIME_TXT "./time.txt"

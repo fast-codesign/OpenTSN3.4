@@ -157,7 +157,7 @@ u8* data_pkt_receive_dispatch_1(u16* pkt_len)
 
         //报文不完整，指针回退
         else {
-            printf("fseek back\n");
+            //printf("fseek back\n");
             fseek(recv_file, -tmp_len, SEEK_CUR);
             return NULL;
         }
