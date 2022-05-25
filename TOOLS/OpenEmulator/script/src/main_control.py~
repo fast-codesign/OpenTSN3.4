@@ -12,13 +12,23 @@ def init_file(projectPath):
 
     tsnlightPath = projectPath + "/tsn_applications/tsnlight"
     dataPath = projectPath + "/data/"
+    simPath = projectPath +"/sim_project"
+
 
     os.chdir(dataPath)
     os.system("rm ./data* && rm ./time.txt && touch data010.txt")
     os.system("touch data110.txt && touch data210.txt && touch data018.txt &&  touch data118.txt && touch data218.txt && touch data012.txt && touch data112.txt && touch data212.txt && touch time.txt ")
-
+    
     os.chdir(tsnlightPath)
-    os.system("rm ./sim_debug_error.txt && touch ./sim_debug_error.txt")
+    os.system("rm ./debug_error.txt && touch ./debug_error.txt")
+
+    pathOfOpenSync = projectPath + "/tsn_applications/ptp_bc"
+    os.system("rm ./debug_error.txt && touch ./debug_error.txt")
+
+    os.chdir(simPath)
+    os.system("rm -rf ./wave* ./novas* ./simv_1* ./*.log ./csrc ./simprofile_dir ./verdiLog ./ucli.key ./profileReport*")
+
+
 
 
 def startup(projectPath, appPath):

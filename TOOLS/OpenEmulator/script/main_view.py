@@ -32,7 +32,7 @@ class Application(tk.Tk):
     def __init__(self):
         super(Application, self).__init__()
 
-        self.projectPath = ""
+        self.projectPath = os.path.dirname(os.path.abspath(__file__)).rsplit("/",1)[0]+"/demo"
         self.simTime = tk.IntVar()
         self.wallClock = tk.IntVar()
         self.ratio = tk.DoubleVar()
@@ -49,7 +49,7 @@ class Application(tk.Tk):
         self.menubar = ttk.Menu(self, font=("fangsong ti", '12'))
 
         self.filemenu = ttk.Menu(self.menubar, tearoff=0, font=("fangsong ti", '10'))
-        self.filemenu.add_command(label="打开", command=self.open)
+        self.filemenu.add_command(label="打开")
         self.filemenu.add_command(label="退出", command=self.__destroy)
 
         self.aboutmenu = ttk.Menu(self.menubar, tearoff=0, font=("fangsong ti", '12'))
@@ -109,7 +109,7 @@ class Application(tk.Tk):
         self.rmmFrame = ttk.Frame(self.rightFrame)
         self.rmmFrame.pack(side='top', expand=False, fill='both', padx=0, pady=20)
 
-        self.startupBut = ttk.Button(self.rightFrame, text="启动", state="disabled", command=self.__startup, bootstyle="success")
+        self.startupBut = ttk.Button(self.rightFrame, text="启动", state="normal", command=self.__startup, bootstyle="success")
         self.startupBut.pack(side='top', expand=False, fill='x', padx=0, ipadx=50, pady=10)
 
         self.stopBut = ttk.Button(self.rightFrame, text="停止", state="disabled", command=self.__stop, bootstyle="danger")
@@ -152,16 +152,23 @@ class Application(tk.Tk):
 
             #only save timeinfo after get the sim time for the first time
             if self.firstGetSimTime is False:
-                timeInfo = (newSysTime, newSimTime)
-                self.timeInfoQueue.put(timeInfo)
-                timeInfoSave_t = threading.Thread(target=tool.timeInfoSave, args=(self.timeInfoQueue, self.startTime, appPath))
-                timeInfoSave_t.start()
+                # timeInfo = (newSysTime, newSimTime)
+                # self.timeInfoQueue.put(timeInfo)
+                # timeInfoSave_t = threading.Thread(target=tool.timeInfoSave, args=(self.timeInfoQueue, self.startTime, appPath))
+                # timeInfoSave_t.start()
+                pass
 
         self.text.see(tk.END)
 
         self.after(1000, self.update)
 
     def __startup(self):
+        
+        print("----------------------------------------------------------------------------------------------------------")
+        print("Run demo in:")
+        print(self.projectPath)
+        print("----------------------------------------------------------------------------------------------------------")
+        
         init_file(self.projectPath)
         self.startTime = time.time()
         self.firstGetSimTime = True

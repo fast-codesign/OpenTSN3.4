@@ -668,7 +668,7 @@ u8 test_flag = 0;
 int gm_timeout_fun(u64 cur_time_count_ns,ptp_sync_context *ptp_sync,libnet_t *send_t)
 {
 
-	printf("sync timer out !\n");
+	//printf("sync timer out !\n");
 	g_timer_array[PTP_TIMEOUT_IDX] = cur_time_count_ns;
 	//printf("cur_time_count_ns %lld\n",cur_time_count_ns);
 	
@@ -749,6 +749,10 @@ int timer_func(u64 cur_time_count_ns,ptp_sync_context *ptp_sync,libnet_t *send_t
 		{
 			continue;
 		}
+        
+       // printf("cur_time_count_ns = %lld,g_timer_array[i] = %lld,ptp_sync->gm->sync_period = %lld \n",cur_time_count_ns,g_timer_array[i],ptp_sync->gm->sync_period);
+
+
 		//每个数组对应不同的处理函数，因此使用case语句，ptp只有一个超时处理函数，
 		switch(i)
 		{

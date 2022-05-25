@@ -10,7 +10,7 @@
 	<!-- 主节点信息 -->
 	<GrandMaster>           
 		<mid>0</mid>						<!-- 主节点的MID编号，十进制主机序 -->
-		<sync_period>100000</sync_period><!-- 同步周期，单位ns，十进制主机序，真实物理环境组网同步周期100ms-->
+		<sync_period>100000000</sync_period><!-- 同步周期，单位ns，十进制主机序，真实物理环境组网同步周期100ms-->
 		<next_class_info_table>				<!-- 下一级同步节点信息 -->
 			<mid>1</mid>					<!-- 节点的MID编号，十进制主机序 -->
 			<mid>2</mid>

@@ -1,33 +1,4 @@
-//-------------------------------------------------------------------------
-// This Verilog file was developed by Altera Corporation.  It may be
-// freely copied and/or distributed at no cost.  Any persons using this
-// file for any purpose do so at their own risk, and are responsible for
-// the results of such use.  Altera Corporation does not guarantee that
-// this file is complete, correct, or fit for any particular purpose.
-// NO WARRANTY OF ANY KIND IS EXPRESSED OR IMPLIED.  This notice must
-// accompany any copy of this file.
-//------------------------------------------------------------------------
-//
-// Quartus Prime 19.1.0 Build 670 09/22/2019
-//
-//------------------------------------------------------------------------
-// LPM Synthesizable Models (Support string type generic)
-// These models are based on LPM version 220 (EIA-IS103 October 1998).
-//------------------------------------------------------------------------
-//
-//-----------------------------------------------------------------------------
-// Assumptions:
-//
-// 1. The default value for LPM_SVALUE, LPM_AVALUE, LPM_PVALUE, and
-//    LPM_STRENGTH is string UNUSED.
-//
-//-----------------------------------------------------------------------------
-// Verilog Language Issues:
-//
-// Two dimensional ports are not supported. Modules with two dimensional
-// ports are implemented as one dimensional signal of (LPM_SIZE * LPM_WIDTH)
-// bits wide.
-//
+
 //-----------------------------------------------------------------------------
 //START_MODULE_NAME------------------------------------------------------------
 //

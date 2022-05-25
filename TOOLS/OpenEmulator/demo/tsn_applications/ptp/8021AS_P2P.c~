@@ -668,7 +668,7 @@ u8 test_flag = 0;
 int gm_timeout_fun(u64 cur_time_count_ns,ptp_sync_context *ptp_sync,libnet_t *send_t)
 {
 
-	//printf("sync timer out !\n");
+	printf("sync timer out !\n");
 	g_timer_array[PTP_TIMEOUT_IDX] = cur_time_count_ns;
 	//printf("cur_time_count_ns %lld\n",cur_time_count_ns);
 	
@@ -749,6 +749,10 @@ int timer_func(u64 cur_time_count_ns,ptp_sync_context *ptp_sync,libnet_t *send_t
 		{
 			continue;
 		}
+        
+       // printf("cur_time_count_ns = %lld,g_timer_array[i] = %lld,ptp_sync->gm->sync_period = %lld \n",cur_time_count_ns,g_timer_array[i],ptp_sync->gm->sync_period);
+
+
 		//每个数组对应不同的处理函数，因此使用case语句，ptp只有一个超时处理函数，
 		switch(i)
 		{
@@ -807,7 +811,6 @@ u64 get_time_ns_from_timestamp(u8 *data)
 
 	return return_data;
 }
-
 
 
 int slave_process(u8 *pkt,ptp_slave_info *slave_node,u8 *dev_mac,libnet_t *send_t)
@@ -871,7 +874,6 @@ int bc_process(u8 *pkt,ptp_bc_info *bc_node,u8 *dev_mac,libnet_t *send_t)
 	get_hcp_mac_from_mid(temp_mac,bc_node->mid);
 	os_cfg_local_clock(temp_mac,dev_mac, syn_clk_cor,reference_pit,send_t);
 
-	//计算主从时间偏差offset
 	//计算主从时间偏差offset
 	if(syn_clk_cor > reference_pit)
 		bc_node->offset = syn_clk_cor - reference_pit;

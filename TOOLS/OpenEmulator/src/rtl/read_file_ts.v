@@ -175,7 +175,7 @@ always @(posedge clk or negedge rst_n)begin
 				end                                                                                                     
 		    end                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 			TRANS_S:begin				                                                                                    
-				if(data_cnt < pktlength_cnt)begin                                                                       				                                                                 					 
+				if(data_cnt < pktlength_cnt-1)begin                                                                       				                                                                 					 
 				     TX_EN <=1'b1;       
 					 TXD <= read_mem_reg; 
 					 count <=$fscanf(fp_r,"%h",read_mem_reg);
@@ -184,8 +184,8 @@ always @(posedge clk or negedge rst_n)begin
 				     read_file_state <=TRANS_S;                                                                         
 				end                                                                                                     
 				else begin                                                                                              
-				     TXD <= 8'b0;                                                                                       
-				     TX_EN <=1'b0;                                                                                      
+				     TXD <= read_mem_reg;                                                                                       
+				     TX_EN <=1'b1;                                                                                      
 				  	 mem_cnt <= mem_cnt; 				 
 				     data_cnt <= 16'd0;                                                                                 
 					 pktlength_cnt <= 16'd0 ;                                                                           

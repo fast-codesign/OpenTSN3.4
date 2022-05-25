@@ -325,8 +325,8 @@ always @(posedge clk or negedge rst_n)begin
 				     read_file_state <=TRANS_S;                                                                         
 				end                                                                                                     
 				else begin                                                                                              
-				     TXD <= 8'b0;                                                                                       
-				     TX_EN <=1'b0;                                                                                      
+				     TXD <= read_mem_reg;                                                                                       
+				     TX_EN <=1'b1;                                                                                      
 				  	 mem_cnt <= mem_cnt; 
 				     data_cnt <= 16'd0;                                                                                 
 					 pktlength_cnt <= 16'd0 ;                                                                           

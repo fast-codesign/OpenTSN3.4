@@ -15,7 +15,7 @@
 ../tsn_net_build/top_read_write_ts.v
 ../tsn_net_build/ts_clock_control.v
 ../tsn_net_build/write_file_data.v
-../tsn_net_build/write_file_ts.sv
+../tsn_net_build/write_file_ts.v
 ../tsn_net_build/tsnswitch/ipcore/hardware_control_point/fifo/syncfifo_showahead_aclr_w9d256.v
 ../tsn_net_build/tsnswitch/ipcore/hardware_control_point/fifo/syncfifo_showahead_aclr_w9d256_fifo_191_53aeptq.v
 ../tsn_net_build/tsnswitch/ipcore/hardware_control_point/fifo/syncfifo_showahead_aclr_w35d4.v

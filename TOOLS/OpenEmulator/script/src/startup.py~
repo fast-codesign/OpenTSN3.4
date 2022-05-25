@@ -45,7 +45,7 @@ def run_tsnlight(projectPath):
     # run_tsnlight = os.system("nohup ./tsnlight a > /dev/null 2>&1 &")
 
     while (1):
-        with open(pathOfTSNlight + '/sim_debug_error.txt', 'r', encoding="utf-8") as f:
+        with open(pathOfTSNlight + '/debug_error.txt', 'r', encoding="utf-8") as f:
             if "SYNC_INIT_S" in f.read():
                 # print(f.read())
                 print("TSNlight successfully lunched!")

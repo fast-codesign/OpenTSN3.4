@@ -213,7 +213,7 @@ typedef unsigned short  u16;
     ret = bind(server_fd, (struct sockaddr*)&ser_addr, sizeof(ser_addr));
      if(ret < 0)
     {
-        printf("socket bind fail!\n");
+        printf("socket bind fail!!!!\n");
          return -1;
      }
 
