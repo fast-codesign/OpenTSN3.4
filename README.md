@@ -20,7 +20,7 @@ opentsn-OpenTSN3.4
 	│	   │   ├── opentsn_hcp         //HCP通用硬件源码（本地配置、定时电路等功能）        
 	│	   │   ├── opentsn_tse         //TSE网卡核心源码（流映射/重映射/注入控制等功能） 	   
 	│	   │   └── opentsn_tss         //TSS交换核心源码（流监管/查表转发等功能）  
-    │      └── script           //硬件FPGA工程脚本程序    
+	│      └── script           //硬件FPGA工程脚本程序    
 	├──SOFTWARE //OpenTSN3.4软件设计                                                                                             
     │      ├── src              //软件源代码                                              
 	│	   │   ├── tsnlight            //TSN网络控制器TSNLihgt                                
