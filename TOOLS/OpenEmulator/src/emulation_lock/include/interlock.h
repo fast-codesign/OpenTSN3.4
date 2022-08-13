@@ -1,12 +1,12 @@
 /*
  * @Date: 2022-01-03 21:06:26
- * @LastEditTime: 2022-04-28 16:06:31
+ * @LastEditTime: 2022-06-15 20:28:08
  * @Description: file content
  */
 #ifndef _INTERLOCK_H
 #define _INTERLOCK_H
 
-#include "../../../lib/api/include/sim.h"
+#include "../../../lib/include/sim.h"
 
 #define RECV_TXT "../../demo/data/data018.txt"
 #define SEND_TXT "../../demo/data/data118.txt"

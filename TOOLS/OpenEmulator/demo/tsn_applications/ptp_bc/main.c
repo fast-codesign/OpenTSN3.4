@@ -31,6 +31,7 @@ void create_debug_file()
 
 int main(int argc,char* argv[])
 {
+    setbuf(stdout,NULL);
 	int i =5;
 	int ret = 0;
 	char temp_net_interface[16]={0};

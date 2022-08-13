@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -L../../lib/api -lsim
+CFLAGS = ../../lib/libsim.a
 
 ROOT_DIR  = $(shell pwd)
 
@@ -11,9 +11,6 @@ ${EXEOBJECT}:${OBJECT}
 	${CC} -o ${EXEOBJECT} ${OBJECT} ${CFLAGS}
 ${OBJECT}:${SRC}
 	${CC} -c  ${SRC} ${INCLUDES}  -g
-
-cleano:
-	rm -rf *.o
 
 clean:
 	rm -rf *.a *.o

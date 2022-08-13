@@ -77,7 +77,9 @@ void create_debug_file()
 
 
 int main(int argc,char* argv[])
-{
+{   
+    
+    setbuf(stdout,NULL);
 	int ret = 0;
 	u8 tsnlight_state = 0;
 	

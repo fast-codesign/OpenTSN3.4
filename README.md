@@ -33,5 +33,8 @@ opentsn-OpenTSN3.4
 	│	       ├── lib                 //仿真器依赖的库文件说明  
 	│	       ├── script              //仿真器运行脚本，脚本执行参看OpenEmulator使用手册     			   
 	│	       └── src                 //仿真器源码    
-	└──EXEQUATUR //	OpenTSN3.4许可证书	   
+	└──FENGLIN_LICENSE //	OpenTSN许可证书	   
 ```
+
+## 许可证说明
+OpenTSN3.4开源项目遵循“枫林临时许可证 第一版”许可证。

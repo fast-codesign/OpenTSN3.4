@@ -88,7 +88,7 @@ report:
 sim:
 	echo TOP_MODULE; $(SIM) -ucli -i ./pre_cmd 
 #show fsdb 
-verdi:
+wave:
 	$(VERDI_HOME)/bin/verdi -sverilog +v2k -f $(FILE_LIST) -ssf $(VERDI_FILE) -top $(TOP_MODULE) &
 #show the cov
 cov:

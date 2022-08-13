@@ -4,7 +4,7 @@
 #make TYPE=TSN_FPGA 表示对tsn FPGA应用场景进行编译
 
 
-CC = gcc -g
+CC = gcc -std=c99
 AR = ar
 
 LDHDPATH = -I ./complib/include 
